@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Jan’s Photos</title>
+    <style type="text/css">
+    body {
+        font-family: Helvetica;
+    }
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        text-align:left;
+        font-size: 12pt;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    div.photo {
+        float:left;
+        width: 372px;
+        height: 372px;
+        margin: 1em;
+        /*border: 1px solid black;*/
+        text-align: center;
+
+    }
+    div.photo.horizontal h2 {
+        margin-left: 46px; /* 372 / 2 - 280 / 2 */
+    }
+    div.photo.vertical h2 {
+        margin-left: 81px;  /* 372 / 2 - 211 / 2 */
+    }
+    div.photo.horizontal img {
+        margin-top: 2em;
+    }
+    div.photo.vertical img {
+        margin-top: 2em;
+    }
+    div#stream {
+        margin: 0 auto 0 auto;
+        width:99%;
+    }
+    </style>
+</head>
+<body>
+    <h1>Jan’s Photos</h1>
+    <div id="stream">
+        <div class="photo vertical">
+            <img src="img/1s.jpg" />
+            <h2>Hole in the Wall</h2>
+        </div>
+        <div class="photo horizontal">
+            <img src="img/2s.jpg" />
+            <h2>Wide Wall</h2>
+        </div>
+        <div class="photo vertical">
+            <img src="img/3s.jpg" />
+            <h2>Temple of Heaven</h2>
+        </div>
+        <div class="photo vertical">
+            <img src="img/4s.jpg" />
+            <h2>Blue Dragon</h2>
+        </div>
+        <div class="photo vertical">
+            <img src="img/5s.jpg" />
+            <h2>CCTV Tower Beijing</h2>
+        </div>
+        <div class="photo horizontal">
+            <img src="img/6s.jpg" />
+            <h2>Mao</h2>
+        </div>
+        <div class="photo vertical">
+            <img src="img/7s.jpg" />
+            <h2>Jule</h2>
+        </div>
+        <div class="photo vertical">
+            <img src="img/8s.jpg" />
+            <h2>Forbidden City, North-West Tower</h2>
+        </div>
+    </div>
+</body>
+</html>

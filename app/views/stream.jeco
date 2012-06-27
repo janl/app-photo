@@ -1,0 +1,17 @@
+<header>
+<h1>
+    Jan’s Photos
+    <small>(<a href='/login'>sign out</a>)</small>
+</h1>
+</header>
+<section id="stream">
+    <% for image in @model.all(): %>
+        <figure data-id="<%- image.id %>">
+            <img src="<%- image.url() %>" />
+            <figcaption>
+              <%= image.name %>
+              <a href="#" class="delete">×</a>
+            </figcaption>
+        </figure>
+    <% end %>
+</section>

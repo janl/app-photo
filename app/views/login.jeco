@@ -1,0 +1,8 @@
+<form class="login">
+  <h1> Sign up / Sign in </h1>
+  <label>email</label>
+  <input type="email" name="email" >
+  <label>password</label>
+  <input type="password" name="password" >
+  <button>submit</button>
+</form>

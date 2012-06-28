@@ -8,12 +8,13 @@ class App extends Spine.Stack
   controllers:
     account : require('controllers/account')
     home    : require('controllers/home')
+    image   : require('controllers/image')
 
   routes: 
-    '/login' : 'account'
+    '/login'     : 'account'
+    '/'          : 'home'
+    '/image/:id' : 'image'
 
-    '/' : 'home'
-    ''  : 'home'
 
   # global events
   events:
@@ -51,9 +52,10 @@ class App extends Spine.Stack
       #   @navigate path, $.deparam(query)
       
       @navigate href
-      return false
+      event.preventDefault()
+      return
       
     if href is '#'
-      return false
+      event.preventDefault()
 
 module.exports = App

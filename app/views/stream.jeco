@@ -6,12 +6,14 @@
 </header>
 <section id="stream">
     <% for image in @model.all(): %>
-        <figure data-id="<%- image.id %>">
-            <img src="<%- image.url() %>" />
-            <figcaption>
-              <%= image.name %>
-              <a href="#" class="delete">×</a>
-            </figcaption>
-        </figure>
+        <a href="/image/<%- image.id %>">
+            <figure data-id="<%- image.id %>">
+                <img src="<%- image.url() %>" />
+                <figcaption>
+                  <%= image.name %>
+                  <a href="#" class="delete">×</a>
+                </figcaption>
+            </figure>
+        </a>
     <% end %>
 </section>

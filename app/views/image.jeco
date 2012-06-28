@@ -1,0 +1,42 @@
+<p>
+    <a href="/">&larr; back</a>
+</p>
+<div id="photo">
+    <img id="thephoto" src="<%- @record.url() %>" />
+</div>
+<div id="pager">
+    <div class="prevnext"></div>
+    <div class="prevnext"></div>
+    <div class="prevnext"></div>
+    <div class="clear"></div>
+</div>
+<div id="detail">
+    <h1>Hole in the Wall</h1>
+    <p>This picture was taken on the chinese wall, facing west.</p>
+
+    <div id="comments">
+        <h3>Comments</h3>
+
+        <div class="comment">
+            <p><span class="from">@janl:</span>
+            Great Shot!</p>
+        </div>
+
+        <div class="comment">
+            <p><span class="from">@docbrown:</span>
+            Great Scott!</p>
+        </div>
+
+        <div class="comment">
+            <p><span class="from">@tigerwoods:</span>
+            Nice hole. I especially like the blurry wall artefacts and the lens flare.</p>
+        </div>
+
+        <div class="new-comment">
+            <textarea></textarea>
+            <br>
+            <input type="submit" value="Send" />
+        </div>
+
+    </div>
+</div>

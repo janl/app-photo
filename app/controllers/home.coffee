@@ -12,6 +12,10 @@ class Home extends Spine.Controller
     super
     
     Image.bind 'refresh change', @render
+
+    hoodie.remote.on 'image:create', (image) ->
+      Image.refresh image
+
     hoodie.store.loadAll('image').done (records) => 
       Image.refresh records
 

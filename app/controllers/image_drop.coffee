@@ -48,10 +48,10 @@ class ImageDrop extends Spine.Controller
         # strip the "data:image/png;base64," part
         data         : event.target.result.substr 13 + file.type.length
 
-      Image.refresh $.extend {_url: event.target.result}, image_object
-      
       hoodie.store.save(image_object.type, image_object.id, image_object)
       .done (object) =>
+        Image.refresh $.extend {_url: event.target.result}, object
+
         object._attachments = _attachments
         hoodie.remote.push([object])
         .done( -> console.log('image uploaded', object, arguments) )

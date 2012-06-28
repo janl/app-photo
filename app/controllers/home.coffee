@@ -13,8 +13,6 @@ class Home extends Spine.Controller
     
     Image.bind 'refresh change', @render
     hoodie.store.loadAll('image').done (records) => 
-
-      records.sort (a, b) -> a.created_at - b.created_at
       Image.refresh records
 
   render: =>

@@ -11,8 +11,8 @@
     <div class="clear"></div>
 </div>
 <div id="detail">
-    <h1>Hole in the Wall</h1>
-    <p>This picture was taken on the chinese wall, facing west.</p>
+    <h1><%= @record.name %></h1>
+    <p><%= @record.description %></p>
 
     <div id="comments">
         <h3>Comments</h3>

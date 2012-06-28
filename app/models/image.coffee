@@ -12,7 +12,7 @@ class Image extends Spine.Model
   description: ''
 
   url: ->
-    return @_url if @_url
+    return @_data_url if @_data_url
     
     # yeah, i'll optimize that, don't worry – or feel free
     baseURL = hoodie.base_url.replace('localhost:9292/', '')

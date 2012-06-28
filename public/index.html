@@ -19,8 +19,8 @@
     <script src="/vendor/hoodie.min.js"></script>
 
     <script>
-    // new Hoodie('https://cors-io.herokuapp.com/jan.iriscouch.com').ready( function(hoodie) {
-    new Hoodie('http://localhost:9292/localhost:5984').ready( function(hoodie) {
+    new Hoodie('https://cors-io.herokuapp.com/jan.iriscouch.com').ready( function(hoodie) {
+    // new Hoodie('http://localhost:9292/localhost:5984').ready( function(hoodie) {
         var App = require("index");
         window.hoodie = hoodie
         window.app = new App({el: $("body")});

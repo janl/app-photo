@@ -3,6 +3,10 @@ require('lib/setup')
 Spine   = require('spine')
 Hoodie  = require('lib/spine-hoodie')
 
+# init Spine
+Spine.hoodie = new Hoodie("http://localhost:9292/localhost:5984")
+
+
 ImageDropController = require('controllers/image_drop')
 
 class App extends Spine.Stack
@@ -22,9 +26,6 @@ class App extends Spine.Stack
     "click a": "_navigate"
 
   constructor: (options) ->
-    # init Spine
-    Spine.hoodie = new Hoodie("http://localhost:9292/localhost:5984")
-
     super
 
     # start routing

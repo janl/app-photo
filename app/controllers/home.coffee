@@ -12,7 +12,6 @@ class Home extends Spine.Controller
     super
     
     Image.bind 'refresh change', @render
-
     Image.fetch()
 
   render: =>

@@ -1,0 +1,43 @@
+.stack > div {
+  display: none;
+}
+.stack > div.active {
+  display: block;
+}
+body {
+  font-family: Helvetica;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: auto;
+  background-color: #fff;
+  -webkit-transition: 0.3s background-color linear;
+  -moz-transition: 0.3s background-color linear;
+  transition: 0.3s background-color linear;
+}
+body.drag-hover {
+  background-color: #ff9;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: left;
+  font-size: 12pt;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+figure {
+  float: left;
+  width: 372px;
+  height: 372px;
+  margin: 1em;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  max-height: 100%;
+}

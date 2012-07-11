@@ -7,7 +7,10 @@ class Image extends Spine.Model
 
   @all: ->
     records = super
-    records.sort (a, b) -> b.created_at - a.created_at
+    now = new Date
+    records.sort (a, b) -> 
+      # 'now' is a workaround, as the remote post does not set created_at / updated_at timestamps ...
+      (b.created_at or now) - (a.created_at or now)
     
   type       : 'image'
   description: ''

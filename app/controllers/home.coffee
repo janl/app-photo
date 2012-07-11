@@ -16,10 +16,7 @@ class Home extends Spine.Controller
 
   render: =>
     @el.html require('views/stream') @
-
-  # active: (params) ->
-  #   super
-  
+    
 
   delete: (event) -> 
     id = $(event.target).closest('[data-id]').data 'id'

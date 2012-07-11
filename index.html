@@ -11,18 +11,14 @@
 <body>
     <link rel="stylesheet" href="public/application.css" type="text/css">
     
-    <script src="public/application.js"></script>
     <script src="public/vendor/jquery-1.7.2.min.js"></script>
-    <script src="public/vendor/hoodie.min.js"></script>
+    <script src="public/vendor/hoodie.js"></script>
+    <script src="public/application.js"></script>
 
     <script>
-    require("lib/spine-hoodie").ready("", function() {
-      alert('hell, yeah!')
-    })
-    $( function() {
-        // var App = require("index");
-        // window.app = new App({el: $("body")});
-    });
+    var App = require("index");
+    new App({el: $("body")});
     </script>
+</body>
 </body>
 </html>

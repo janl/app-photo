@@ -5,7 +5,7 @@ Hoodie  = require('lib/spine-hoodie')
 
 # init Spine
 if location.hostname is 'hoodiehq.github.com'
-  hoodie_url = "http://cors.io/jan.irisicouch.com"
+  hoodie_url = "http://cors.io/jan.iriscouch.com"
 else
   hoodie_url = "http://localhost:9292/localhost:5984"
 

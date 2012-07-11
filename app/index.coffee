@@ -4,7 +4,13 @@ Spine   = require('spine')
 Hoodie  = require('lib/spine-hoodie')
 
 # init Spine
-Spine.hoodie = new Hoodie("http://localhost:9292/localhost:5984")
+if location.hostname is 'hoodiehq.github.com'
+  hoodie_url = "http://cors-io/jan.irisicouch.com"
+else
+  hoodie_url = "http://localhost:9292/localhost:5984"
+
+
+Spine.hoodie = new Hoodie(hoodie_url)
 
 
 ImageDropController = require('controllers/image_drop')

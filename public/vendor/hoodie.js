@@ -540,13 +540,13 @@ Hoodie.Remote = (function() {
   Remote.prototype.activate = function() {
     this.hoodie.config.set('_remote.active', this.active = true);
     this.hoodie.on('account:signed_out', this.disconnect);
-    this.hoodie.on('account:signed_in', this.sync);
+    this.hoodie.on('account:signed_in', this.connect);
     return this.connect();
   };
 
   Remote.prototype.deactivate = function() {
     this.hoodie.config.set('_remote.active', this.active = false);
-    this.hoodie.unbind('account:signed_in', this.sync);
+    this.hoodie.unbind('account:signed_in', this.connect);
     this.hoodie.unbind('account:signed_out', this.disconnect);
     return this.disconnect();
   };
@@ -560,7 +560,6 @@ Hoodie.Remote = (function() {
     var _ref, _ref1;
     this.connected = false;
     this.hoodie.unbind('store:dirty:idle', this.push);
-    this.hoodie.unbind('account:signed_in', this.connect);
     if ((_ref = this._pull_request) != null) {
       _ref.abort();
     }

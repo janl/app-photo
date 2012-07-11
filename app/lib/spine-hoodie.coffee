@@ -27,4 +27,4 @@ Spine.Model.Hoodie =
             localObject[attr] = value
           localObject.save()
 
-module?.exports = Spine.Model.Hoodie
+module?.exports = Hoodie

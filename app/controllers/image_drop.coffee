@@ -39,7 +39,7 @@ class ImageDrop extends Spine.Controller
         filename: file.name,
         size    : file.size,
         type    : 'image',
-        id      : hoodie.store.uuid(7)
+        id      : Spine.hoodie.store.uuid(7)
       
       _attachments = {}
       _attachments[file.name] =
@@ -48,12 +48,13 @@ class ImageDrop extends Spine.Controller
         # strip the "data:image/png;base64," part
         data         : event.target.result.substr 13 + file.type.length
 
-      hoodie.store.save(image_object.type, image_object.id, image_object)
+      Spine.hoodie.store.save(image_object.type, image_object.id, image_object)
       .done (object) =>
+        console.log 'refresh!!', $.extend {_url: event.target.result}, object
         Image.refresh $.extend {_url: event.target.result}, object
 
         object._attachments = _attachments
-        hoodie.remote.push([object])
+        Spine.hoodie.remote.push([object])
         .done( -> console.log('image uploaded', object, arguments) )
         .fail( -> console.log('image upload failed', object, arguments) )
 

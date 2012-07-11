@@ -9,7 +9,7 @@ class Account extends Spine.Controller
     @render()
 
   active : (params) ->
-    hoodie.account.sign_out()
+    Spine.hoodie.account.sign_out()
     super
 
   render : ->
@@ -25,10 +25,10 @@ class Account extends Spine.Controller
     email    = @$email.val()
     password = @$password.val()
 
-    sign_in_promise = hoodie.account.sign_in(email, password)
+    sign_in_promise = Spine.hoodie.account.sign_in(email, password)
     sign_in_promise.done @hide_login
     sign_in_promise.fail =>
-      sign_up_promise = hoodie.account.sign_up(email, password)
+      sign_up_promise = Spine.hoodie.account.sign_up(email, password)
       sign_up_promise.done @hide_login
       sign_up_promise.fail ->
         alert 'oops, something went wrong, buddy! Maybe try again?'

@@ -9,28 +9,16 @@
     </style>
 </head>
 <body>
-    
-
     <link rel="stylesheet" href="/application.css" type="text/css">
 
-    
-    <script src="/application.js"></script>
     <script src="/vendor/jquery-1.7.2.min.js"></script>
-    <script src="/vendor/hoodie.min.js"></script>
+    <script src="/vendor/hoodie.js"></script>
+    <script src="/application.js"></script>
 
     <script>
-    // new Hoodie('https://cors-io.herokuapp.com/jan.iriscouch.com').ready( function(hoodie) {
-    new Hoodie('http://localhost:9292/localhost:5984').ready( function(hoodie) {
-        var App = require("index");
-        window.hoodie = hoodie
-        window.app = new App({el: $("body")});
-    });
-    // hoodie = new Hoodie('http://localhost:9292/localhost:5984'); 
-    // hoodie = new Hoodie('http://localhost:9292/localhost:5984');
-    // hoodie.ready( function(){
-    //   var App = require("index");
-    //   window.app = new App({el: $("body")});      
-    // });
+    var App = require("index");
+    new App({el: $("body")});
     </script>
 </body>
 </html>
+

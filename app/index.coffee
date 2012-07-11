@@ -1,6 +1,8 @@
 require('lib/setup')
 
-Spine = require('spine')
+Spine   = require('spine')
+Hoodie  = require('lib/spine-hoodie')
+
 ImageDropController = require('controllers/image_drop')
 
 class App extends Spine.Stack
@@ -15,12 +17,13 @@ class App extends Spine.Stack
     '/'          : 'home'
     '/image/:id' : 'image'
 
-
   # global events
   events:
     "click a": "_navigate"
 
   constructor: (options) ->
+    # init Spine
+    Spine.hoodie = new Hoodie("http://localhost:9292/localhost:5984")
 
     super
 
@@ -28,7 +31,7 @@ class App extends Spine.Stack
     Spine.Route.setup trigger: true
 
     # authenticate
-    hoodie.account.authenticate().fail @show_login
+    Spine.hoodie.account.authenticate().fail @show_login
 
     # init image drop
     new ImageDropController el: @el

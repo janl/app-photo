@@ -13,26 +13,19 @@ class Home extends Spine.Controller
     
     Image.bind 'refresh change', @render
 
-    hoodie.remote.on 'created:image', (id, image) ->
-      Image.refresh image
-
-    hoodie.store.loadAll('image').done (records) => 
-      Image.refresh records
+    Image.fetch()
 
   render: =>
     @el.html require('views/stream') @
 
-  active: (params) ->
-    console.log 'home sweet home'
-    super
+  # active: (params) ->
+  #   super
   
 
   delete: (event) -> 
     id = $(event.target).closest('[data-id]').data 'id'
 
-    hoodie.store.destroy('image', id)
-    .done -> Image.destroy id
-
+    Image.destroy id
     return false
     
 module.exports = Home

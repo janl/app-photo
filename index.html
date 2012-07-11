@@ -9,21 +9,19 @@
     </style>
 </head>
 <body>
-    
-
     <link rel="stylesheet" href="public/application.css" type="text/css">
-
     
     <script src="public/application.js"></script>
     <script src="public/vendor/jquery-1.7.2.min.js"></script>
     <script src="public/vendor/hoodie.min.js"></script>
 
     <script>
-    new Hoodie('https://cors-io.herokuapp.com/jan.iriscouch.com').ready( function(hoodie) {
-    // new Hoodie('http://localhost:9292/localhost:5984').ready( function(hoodie) {
-        var App = require("index");
-        window.hoodie = hoodie
-        window.app = new App({el: $("body")});
+    require("lib/spine-hoodie").ready("", function() {
+      alert('hell, yeah!')
+    })
+    $( function() {
+        // var App = require("index");
+        // window.app = new App({el: $("body")});
     });
     </script>
 </body>

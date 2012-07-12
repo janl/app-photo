@@ -38,7 +38,9 @@ class App extends Spine.Stack
     Spine.Route.setup trigger: true
 
     # authenticate
-    Spine.hoodie.account.authenticate().fail @show_login
+    Spine.hoodie.account.authenticate()
+    .done(@show_home)
+    .fail(@show_login)
 
     # init image drop
     new ImageDropController el: @el
@@ -46,6 +48,8 @@ class App extends Spine.Stack
   show_login: =>
     @navigate '/login', true
 
+  show_home: =>
+    @navigate '/', true    
     
   _navigate: (event) ->
     $a = $ event.currentTarget

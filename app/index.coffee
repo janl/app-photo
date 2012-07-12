@@ -2,17 +2,9 @@ require('lib/setup')
 
 Spine   = require('spine')
 Hoodie  = require('lib/spine-hoodie')
+config  = require('lib/config')
 
-# init Spine
-if location.hostname is 'hoodiehq.github.com'
-  hoodie_url = "http://cors.io/jan.iriscouch.com"
-else
-  hoodie_url = "http://localhost:9292/localhost:5984"
-
-
-Spine.hoodie = new Hoodie(hoodie_url)
-
-
+Spine.hoodie = new Hoodie(config.hoodie_url)
 ImageDropController = require('controllers/image_drop')
 
 class App extends Spine.Stack

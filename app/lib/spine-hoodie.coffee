@@ -23,10 +23,16 @@ Spine.Model.Hoodie =
     @attributes.unshift 'type'
 
     @change (object, event, data) =>
-      console.log 'change!'
-      console.log 'object', object
-      console.log 'event', event
-      console.log 'data', data
+      switch event
+        when 'create'
+          console.log 'create', type, object.toJSON()
+          Spine.hoodie.store.create type, object.toJSON()
+        when 'update'
+          console.log 'update', type, object.id, object.toJSON()
+          Spine.hoodie.store.update type, object.id, object.toJSON()
+        when 'destroy'
+          console.log 'destroy', type, object.id
+          Spine.hoodie.store.destroy type, object.id
 
     # fetch records from hoodie.store
     @fetch =>
@@ -35,7 +41,6 @@ Spine.Model.Hoodie =
 
     # listen to remote events on records
     Spine.hoodie.remote.on "changed:#{type}", (event, remoteObject) => 
-      console.log event, remoteObject
       switch event
         when 'created'
           @refresh remoteObject

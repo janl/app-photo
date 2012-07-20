@@ -30,7 +30,7 @@ class App extends Spine.Stack
     Spine.Route.setup trigger: true
 
     # authenticate
-    Spine.hoodie.account.authenticate()
+    Spine.hoodie.my.account.authenticate()
     .done(@show_home)
     .fail(@show_login)
 

@@ -2,7 +2,7 @@
 <h1>
     Jan’s Photos
     <small>(<a href='/login'>sign out</a>)</small>
-    <small>(<a href='<%- "mailto:dbf90f06b4b0807ed39a8d4686cb5f43+#{Spine.hoodie.account.db()}@inbound.postmarkapp.com?subject=photo name here&body=photo description here" %>'>send email</a>)</small>
+    <small>(<a href='<%- "mailto:dbf90f06b4b0807ed39a8d4686cb5f43+#{Spine.hoodie.my.account.db()}@inbound.postmarkapp.com?subject=photo name here&body=photo description here" %>'>send email</a>)</small>
 </h1>
 </header>
 <section id="stream">

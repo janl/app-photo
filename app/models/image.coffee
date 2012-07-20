@@ -18,6 +18,6 @@ class Image extends Spine.Model
     
     # yeah, i'll optimize that, don't worry – or feel free
     baseURL = Spine.hoodie.baseUrl.replace('localhost:9292/', '')
-    "#{baseURL}/#{encodeURIComponent Spine.hoodie.account.db()}/image%2f#{@id}/#{@filename or @name}" 
+    "#{baseURL}/#{encodeURIComponent Spine.hoodie.my.account.db()}/image%2f#{@id}/#{@filename or @name}" 
   
 module.exports = Image

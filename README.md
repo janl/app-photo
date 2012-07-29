@@ -5,5 +5,7 @@ See it live: http://hoodiehq.github.com/app-photo
 
 GETTING STARTED
 
+```bash
 $ npm install .
 $ hem server
+```

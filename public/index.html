@@ -18,6 +18,17 @@
     <script>
     var App = require("index");
     new App({el: $("body")});
+    (function($) {
+      // prevent browsers (read FF) from loading a drag-and-dropped file
+      $(window).bind('dragover', function(e){
+          e = e || event;
+          e.preventDefault();
+      });
+      $(window).bind('drop', function(e){
+          e = e || event;
+          e.preventDefault();
+      });
+    })(jQuery);
     </script>
 </body>
 </html>
